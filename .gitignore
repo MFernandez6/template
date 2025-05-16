@@ -42,7 +42,20 @@ public/images/*.avi
 public/images/*.wmv
 public/images/*.flv
 public/images/*.mkv
+public/images/*.jpg
+public/images/*.jpeg
+public/images/*.png
+public/images/*.gif
+public/images/*.webp
+public/images/*.svg
+public/uploads/*
 
 # Keep specific image files
 !public/images/logo-red-blue.jpg
 !public/images/long-logo-ClaimSaver.jpg
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
