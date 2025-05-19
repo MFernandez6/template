@@ -4,13 +4,10 @@ import { join } from "path";
 import connectDB from "@/lib/mongodb";
 import Document from "@/models/Document";
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-
-export async function DELETE(request: NextRequest, { params }: Props) {
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+): Promise<NextResponse> {
   try {
     const documentId = params.id;
 
