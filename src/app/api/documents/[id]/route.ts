@@ -6,10 +6,10 @@ import Document from "@/models/Document";
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
   try {
-    const documentId = params.id;
+    const documentId = context.params.id;
 
     await connectDB();
     const document = await Document.findById(documentId);
