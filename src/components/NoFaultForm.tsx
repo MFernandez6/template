@@ -858,7 +858,7 @@ export default function NoFaultForm({ onClose, onSubmit }: NoFaultFormProps) {
                   />
                 }
                 label={
-                  <Typography variant="body2" paragraph>
+                  <Typography variant="body2" component="div" paragraph>
                     This authorization or photocopy hereof, will authorize you
                     to furnish all information you may have regarding my
                     condition while under your observation or treatment,
@@ -880,7 +880,11 @@ export default function NoFaultForm({ onClose, onSubmit }: NoFaultFormProps) {
                   {formData.medicalSignature ? "Re-sign" : "Sign"}
                 </Button>
                 {formData.medicalSignature && (
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    component="div"
+                    color="text.secondary"
+                  >
                     Signed on {formData.medicalSignatureDate}
                   </Typography>
                 )}
@@ -898,7 +902,7 @@ export default function NoFaultForm({ onClose, onSubmit }: NoFaultFormProps) {
                   />
                 }
                 label={
-                  <Typography variant="body2" paragraph>
+                  <Typography variant="body2" component="div" paragraph>
                     This authorization or photocopy hereof, will authorize you
                     to furnish all information you may have regarding my wages
                     or salary while employed by you. You are authorized to
@@ -919,7 +923,11 @@ export default function NoFaultForm({ onClose, onSubmit }: NoFaultFormProps) {
                   {formData.wageSignature ? "Re-sign" : "Sign"}
                 </Button>
                 {formData.wageSignature && (
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    component="div"
+                    color="text.secondary"
+                  >
                     Signed on {formData.wageSignatureDate}
                   </Typography>
                 )}

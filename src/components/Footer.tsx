@@ -41,7 +41,7 @@ export default function Footer() {
       <Container maxWidth="lg">
         <Grid container spacing={6}>
           {/* Contact Information */}
-          <Grid component="div" xs={12} md={4}>
+          <Grid item xs={12} md={4}>
             <Typography
               variant="h6"
               gutterBottom
@@ -106,7 +106,7 @@ export default function Footer() {
           </Grid>
 
           {/* Quick Links */}
-          <Grid component="div" xs={12} md={4}>
+          <Grid item xs={12} md={4}>
             <Typography
               variant="h6"
               gutterBottom
@@ -152,10 +152,11 @@ export default function Footer() {
           </Grid>
 
           {/* About & Social */}
-          <Grid component="div" xs={12} md={4}>
+          <Grid item xs={12} md={4}>
             <Typography
               variant="h6"
               gutterBottom
+              component="div"
               sx={{
                 fontWeight: 600,
                 fontSize: "1.25rem",
@@ -174,11 +175,19 @@ export default function Footer() {
             >
               About ClaimSaver+
             </Typography>
-            <Typography variant="body2" paragraph sx={{ mb: 3, opacity: 0.9 }}>
+            <Typography
+              variant="body2"
+              component="div"
+              sx={{ mb: 3, opacity: 0.9 }}
+            >
               Dedicated to helping accident victims maximize their settlements
               while minimizing unnecessary costs.
             </Typography>
-            <Typography variant="body2" sx={{ fontStyle: "italic", mb: 3 }}>
+            <Typography
+              variant="body2"
+              component="div"
+              sx={{ fontStyle: "italic", mb: 3 }}
+            >
               Established 2020
             </Typography>
             <Stack direction="row" spacing={2}>

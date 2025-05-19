@@ -152,6 +152,7 @@ const LoginModal = ({ open, onClose }: LoginModalProps) => {
 
           <Typography
             variant="body2"
+            component="div"
             color="text.secondary"
             sx={{ mt: 2, textAlign: "center" }}
           >

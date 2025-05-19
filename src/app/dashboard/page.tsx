@@ -256,7 +256,9 @@ export default function DashboardPage() {
                     <Typography variant="caption" color="text.secondary">
                       Claim ID
                     </Typography>
-                    <Typography variant="body1">{latestClaim.id}</Typography>
+                    <Typography variant="body1" component="div">
+                      {latestClaim.id}
+                    </Typography>
                   </Box>
                 </Box>
 
@@ -266,7 +268,11 @@ export default function DashboardPage() {
                     <Typography variant="caption" color="text.secondary">
                       Status
                     </Typography>
-                    <Typography variant="body1" sx={{ mb: 0.5 }}>
+                    <Typography
+                      variant="body1"
+                      component="div"
+                      sx={{ mb: 0.5 }}
+                    >
                       {latestClaim.status === "In Progress" &&
                       calculateProgress() === 100
                         ? "Finished"
@@ -304,7 +310,9 @@ export default function DashboardPage() {
                     <Typography variant="caption" color="text.secondary">
                       Type
                     </Typography>
-                    <Typography variant="body1">{latestClaim.type}</Typography>
+                    <Typography variant="body1" component="div">
+                      {latestClaim.type}
+                    </Typography>
                   </Box>
                 </Box>
 
@@ -314,7 +322,9 @@ export default function DashboardPage() {
                     <Typography variant="caption" color="text.secondary">
                       Date
                     </Typography>
-                    <Typography variant="body1">{latestClaim.date}</Typography>
+                    <Typography variant="body1" component="div">
+                      {latestClaim.date}
+                    </Typography>
                   </Box>
                 </Box>
 
@@ -327,7 +337,11 @@ export default function DashboardPage() {
                   >
                     Description
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    component="div"
+                    color="text.secondary"
+                  >
                     {latestClaim.description}
                   </Typography>
                 </Box>

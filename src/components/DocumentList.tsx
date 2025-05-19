@@ -147,10 +147,18 @@ export default function DocumentList({ claimId }: DocumentListProps) {
                       variant="outlined"
                     />
                   </Stack>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    component="div"
+                    color="text.secondary"
+                  >
                     Uploaded: {new Date(document.uploadDate).toLocaleString()}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    component="div"
+                    color="text.secondary"
+                  >
                     Size: {(document.size / 1024).toFixed(1)} KB
                   </Typography>
                 </Box>

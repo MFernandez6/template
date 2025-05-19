@@ -250,7 +250,7 @@ export default function DocumentUpload({
           </Button>
         </label>
         {file && (
-          <Typography variant="body2" sx={{ mt: 1 }}>
+          <Typography variant="body2" component="div" sx={{ mt: 1 }}>
             Selected: {file.name}
           </Typography>
         )}
