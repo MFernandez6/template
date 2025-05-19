@@ -4,10 +4,16 @@ import { join } from "path";
 import connectDB from "@/lib/mongodb";
 import Document from "@/models/Document";
 
+interface RouteContext {
+  params: {
+    id: string;
+  };
+}
+
 export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-): Promise<NextResponse> {
+  req: NextRequest,
+  { params }: RouteContext
+): Promise<Response> {
   try {
     const documentId = params.id;
 
