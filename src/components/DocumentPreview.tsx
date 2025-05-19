@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   Dialog,
   DialogTitle,
@@ -40,12 +41,15 @@ export default function DocumentPreview({
     // Handle different file types
     if (document.mimeType.startsWith("image/")) {
       return (
-        <img
-          src={document.path}
-          alt={document.originalName}
-          style={{ maxWidth: "100%", maxHeight: "80vh" }}
-          onError={() => setError("Failed to load image")}
-        />
+        <Box sx={{ position: "relative", width: "100%", height: "80vh" }}>
+          <Image
+            src={document.path}
+            alt={document.originalName}
+            fill
+            style={{ objectFit: "contain" }}
+            onError={() => setError("Failed to load image")}
+          />
+        </Box>
       );
     }
 

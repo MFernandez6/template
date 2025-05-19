@@ -4,7 +4,7 @@ import Claim from "@/models/Claim";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
-export async function GET(_request: NextRequest) {
+export async function GET() {
   try {
     console.log("Starting GET /api/claims request");
 
@@ -23,12 +23,12 @@ export async function GET(_request: NextRequest) {
     try {
       await connectDB();
       console.log("MongoDB connected successfully");
-    } catch (dbError: any) {
-      console.error("MongoDB connection error:", dbError);
+    } catch (_error: unknown) {
+      console.error("MongoDB connection error:", _error);
       return NextResponse.json(
         {
           error: "Database connection failed",
-          details: dbError?.message || "Unknown error",
+          details: _error instanceof Error ? _error.message : "Unknown error",
         },
         { status: 500 }
       );
@@ -41,12 +41,12 @@ export async function GET(_request: NextRequest) {
     console.log("Found claims:", claims.length);
 
     return NextResponse.json(claims);
-  } catch (error: any) {
-    console.error("Error in GET /api/claims:", error);
+  } catch (_error: unknown) {
+    console.error("Error in GET /api/claims:", _error);
     return NextResponse.json(
       {
         error: "Error fetching claims",
-        details: error?.message || "Unknown error",
+        details: _error instanceof Error ? _error.message : "Unknown error",
       },
       { status: 500 }
     );
@@ -69,12 +69,12 @@ export async function POST(request: NextRequest) {
     await connectDB();
     const claim = await Claim.create(claimData);
     return NextResponse.json(claim);
-  } catch (error: any) {
-    console.error("Error creating claim:", error);
+  } catch (_error: unknown) {
+    console.error("Error creating claim:", _error);
     return NextResponse.json(
       {
         error: "Error creating claim",
-        details: error?.message || "Unknown error",
+        details: _error instanceof Error ? _error.message : "Unknown error",
       },
       { status: 500 }
     );

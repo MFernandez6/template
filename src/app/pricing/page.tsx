@@ -12,7 +12,6 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  Divider,
 } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";

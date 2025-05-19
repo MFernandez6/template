@@ -1,6 +1,5 @@
-import mongoose from "mongoose";
-import Claim from "../models/Claim";
 import connectDB from "../lib/mongodb";
+import Claim from "../models/Claim";
 
 const sampleClaims = [
   {

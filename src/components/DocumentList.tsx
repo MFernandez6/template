@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import {
   List,
   ListItem,
@@ -39,7 +39,7 @@ export default function DocumentList({ claimId }: DocumentListProps) {
   const [error, setError] = useState<string | null>(null);
   const [previewDocument, setPreviewDocument] = useState<Document | null>(null);
 
-  const fetchDocuments = async () => {
+  const fetchDocuments = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -56,11 +56,11 @@ export default function DocumentList({ claimId }: DocumentListProps) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [claimId]);
 
   useEffect(() => {
     fetchDocuments();
-  }, [claimId]);
+  }, [fetchDocuments]);
 
   const handleDownload = (document: Document) => {
     window.open(document.path, "_blank");
