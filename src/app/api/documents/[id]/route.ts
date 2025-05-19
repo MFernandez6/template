@@ -4,12 +4,15 @@ import { join } from "path";
 import connectDB from "@/lib/mongodb";
 import Document from "@/models/Document";
 
-export async function DELETE(
-  request: NextRequest,
-  context: { params: { id: string } }
-) {
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export async function DELETE(request: NextRequest, { params }: Props) {
   try {
-    const documentId = context.params.id;
+    const documentId = params.id;
 
     await connectDB();
     const document = await Document.findById(documentId);
